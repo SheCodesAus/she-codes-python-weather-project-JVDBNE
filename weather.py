@@ -100,6 +100,17 @@ def load_data_from_csv(csv_file):
     #         return[line]
 
 
+    main_list = []
+    with open(csv_file) as file:
+        reader = csv.reader(file)
+        next(reader)
+        for line in reader:
+            if len(line) > 0:
+                main_list.append([line[0], int(line[1]), int(line[2])])
+    return main_list
+
+
+
 def find_min(weather_data): 
     """Calculates the minimum value in a list of numbers.
 
