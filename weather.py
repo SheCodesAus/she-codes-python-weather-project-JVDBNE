@@ -181,29 +181,29 @@ def generate_summary(weather_data):
             min_temps.append(item[1])
             max_temps.append(item[2])
 
-        min_temperature_f, index_min = find_min(min_temps)
-        max_temperature_f, index_max = find_max(max_temps)
+    min_temperature_f, index_min = find_min(min_temps)
+    max_temperature_f, index_max = find_max(max_temps)
 
-        min_temp_c = convert_f_to_c(str(min_temperature_f))
-        max_temp_c = convert_f_to_c(str(max_temperature_f))
+    min_temp_c = convert_f_to_c(str(min_temperature_f))
+    max_temp_c = convert_f_to_c(str(max_temperature_f))
 
-        date_min = dates[index_min]
-        date_max = dates[index_max]
+    date_min = dates[index_min]
+    date_max = dates[index_max]
 
-        av_min_f = calculate_mean(min_temps)
-        av_max_f = calculate_mean(max_temps)
+    av_min_f = calculate_mean(min_temps)
+    av_max_f = calculate_mean(max_temps)
 
-        av_min_c = convert_f_to_c(av_min_f)
-        av_max_c = convert_f_to_c(av_max_f)
+    av_min_c = convert_f_to_c(av_min_f)
+    av_max_c = convert_f_to_c(av_max_f)
 
-        result = ""
-        result += f"{number_of_days} Day Overview\n"
-        result += f"  The lowest temperature will be {format_temperature(min_temp_c)}, and will occur on {convert_date(date_min)}.\n"
-        result += f"  The highest temperature will be {format_temperature(max_temp_c)}, and will occur on {convert_date(date_max)}.\n"
-        result += f"  The average low this week is {format_temperature(av_min_c)}.\n"
-        result += f"  The average high this week is {format_temperature(av_max_c)}.\n"
+    result = ""
+    result += f"{number_of_days} Day Overview\n"
+    result += f"  The lowest temperature will be {format_temperature(min_temp_c)}, and will occur on {convert_date(date_min)}.\n"
+    result += f"  The highest temperature will be {format_temperature(max_temp_c)}, and will occur on {convert_date(date_max)}.\n"
+    result += f"  The average low this week is {format_temperature(av_min_c)}.\n"
+    result += f"  The average high this week is {format_temperature(av_max_c)}.\n"
 
-        return result
+    return result
 
 def generate_daily_summary(weather_data):
     """Outputs a daily summary for the given weather data.
