@@ -45,7 +45,7 @@ def convert_f_to_c(temp_in_farenheit):
     temp_c = round(temp_c_1, 1)
     return temp_c
 
-print (convert_f_to_c(0))  
+  
 
 
 def calculate_mean(weather_data):                                                                   
